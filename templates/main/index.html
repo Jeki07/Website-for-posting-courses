@@ -1,0 +1,35 @@
+{% extends 'main/public.html' %}
+{% block title %}Главная страница{% endblock title %}
+{% block content %}
+        {% if user.is_authenticated %}
+            <p></p>
+            <h1 class="t">Уроки</h1>
+            <p></p>
+    
+        {% for p in post %}
+            {% if p.published == True %}
+                <div class="posts">
+                    <div class="text_post">
+                        <a href="{% url 'post_detail' p.id %}"><h3>{{p.title}}  </h3></a>
+                    </div>
+                    
+                    <a href="{% url 'post_detail' p.id %}"><img class="images" src="{{ MEDIA_URL }}{{ p.image.url }}"></a>
+                    
+                    <p><a href="{% url 'post_detail' p.id %}" class="btn btn-warning">Далее...</a></p>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+
+    
+                
+        {% else %}
+    
+            <div class="register-container">
+                <h2>Пожалуйста зарегистрируйтесь на сайте чтобы получить доступ к контенту</h2>
+                <a href="{% url 'signup' %}">регистрироваться</a>
+            </div>
+        
+        
+        {% endif %}
+{% endblock content %}

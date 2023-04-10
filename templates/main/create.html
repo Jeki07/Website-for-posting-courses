@@ -1,0 +1,22 @@
+{% extends 'main/public.html' %}
+
+{% block title %}Новый запись{% endblock title %}
+
+{% block content %}
+<div class="features">
+    
+    <form method="post">
+        {% csrf_token %}
+        <h1>Добавление записей</h1>
+        {{ form.title }}<br>
+        {{ form.anons }}<br>
+        Фото:  {{ form.image }}<br>
+        <p></p>
+        Видео:  {{ form.video }}<br>
+        <span>{{ error }}</span><br>
+        <button class="btn btn-warning" type="submit" style="height:40px;width:200px; margin-top:20px"><i class="bi bi-plus-circle-fill"></i>Добавить запись</button>
+    </form>
+</div>
+{% endblock content %}
+
+

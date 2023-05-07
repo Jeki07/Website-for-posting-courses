@@ -8,28 +8,21 @@
     
         {% for p in post %}
             {% if p.published == True %}
-                <div class="posts">
-                    <div class="text_post">
-                        <a href="{% url 'post_detail' p.id %}"><h3>{{p.title}}  </h3></a>
+                <a href="{% url 'post_detail' p.id %}">
+                    <div class="posts">
+                        <div class="text_post">
+                            <h3>{{p.title}}</h3>
+                        </div>
+                        <img class="images" src="{{ MEDIA_URL }}{{ p.image.url }}">
+                        <p class="btn btn-warning">Далее...</p>
                     </div>
-                    
-                    <a href="{% url 'post_detail' p.id %}"><img class="images" src="{{ MEDIA_URL }}{{ p.image.url }}"></a>
-                    
-                    <p><a href="{% url 'post_detail' p.id %}" class="btn btn-warning">Далее...</a></p>
-                </div>
+                </a>
             {% endif %}
-        {% endfor %}
-
-
-    
-                
+        {% endfor %}       
         {% else %}
-    
             <div class="register-container">
                 <h2>Пожалуйста зарегистрируйтесь на сайте чтобы получить доступ к контенту</h2>
                 <a href="{% url 'signup' %}">регистрироваться</a>
             </div>
-        
-        
         {% endif %}
 {% endblock content %}

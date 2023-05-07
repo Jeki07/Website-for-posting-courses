@@ -13,21 +13,5 @@
         </div>
     </div>
 
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.content }}</p>
-    <hr>
-    <h3>{{ comments.count }} Комментарии:</h3>
-    {% for comment in comments %}
-      <p>{{ comment.content }}</p>
-      <small>От {{ comment.user.username }} в {{ comment.created_at }}</small>
-      <hr>
-    {% empty %}
-      <p>Нет комментариев.</p>
-    {% endfor %}
-    <h3>Оставить комментарий:</h3>
-    <form method="POST">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Отправить</button>
-    </form>
+
 {% endblock content %}

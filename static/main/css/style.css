@@ -1,6 +1,11 @@
 body {
     background: #2c2c2c;
 }
+
+a {
+    text-decoration: none;
+}
+
 .images {
     max-width: 250px;
     max-height: 250px;
@@ -9,24 +14,23 @@ body {
     margin-top: 30px;
     margin-bottom: 10px;
 }
-.text_post a {
+a .text_post {
     text-decoration: none;
     color: #ffffff;
 }
 
-
-.text_post {
+a .text_post {
     position: absolute;
     margin-left: 300px;
     margin-top: 20px;
 }
 
-.posts:hover{
+a .posts:hover{
     background: #181818;
     transform: scale(1.01);
 }
 
-.posts {
+a .posts {
     background: #3d3d3d;
     margin-left: 30px;
     border-width: 5px 5px 5px 5px;
@@ -35,9 +39,10 @@ body {
     border-radius: 30px;
     margin-right: 20px;
     transition: transform .6s ease;
+    margin-top: 20px;
 }
 
-.posts p a {
+a .posts p {
     margin-left: 90%;
 }
 

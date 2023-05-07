@@ -1,5 +1,7 @@
 from .models import Post
 from django.forms import ModelForm, TextInput, FileInput, Textarea
+from django import forms
+
 
 
 class PostForm(ModelForm):
